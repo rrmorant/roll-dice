@@ -6,9 +6,9 @@ class RollDice extends Component {
 	static defaultProps = {
 		sides: ["one", "two", "three", "four", "five", "six"],
 	};
+
 	constructor(props) {
 		super(props);
-
 		this.state = {
 			die1: "one",
 			die2: "one",
@@ -16,6 +16,7 @@ class RollDice extends Component {
 		};
 		this.roll = this.roll.bind(this);
 	}
+
 	roll() {
 		const { sides } = this.props;
 		this.setState({
@@ -27,6 +28,7 @@ class RollDice extends Component {
 			this.setState({ rolling: false });
 		}, 1000);
 	}
+
 	render() {
 		const handleBtn = this.state.rolling ? "RollDice-rolling" : "";
 		const { die1, die2, rolling } = this.state;
